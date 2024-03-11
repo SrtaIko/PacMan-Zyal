@@ -141,12 +141,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="libraries\raylib\include\raylib.h" />
     <ClInclude Include="libraries\raylib\include\raymath.h" />
     <ClInclude Include="libraries\raylib\include\rlgl.h" />
+    <ClInclude Include="Object.hpp" />
+    <ClInclude Include="SystemEvents.hpp" />
+    <ClInclude Include="WindowManager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
