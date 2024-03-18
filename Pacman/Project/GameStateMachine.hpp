@@ -1,15 +1,16 @@
 class StateMachine
 {
-	enum State
-	{
-		Intro,
-		NotCoinGameplay,
-		InsertingCoins,
-		Game,
-	};
 private:
-	State currentState;
+	int currentState;
+	void Input();
+	void Logic();
+	void Render();
 public:
+	bool CompareState(const char *state_);
+	int GetState();
+	void SetState();
+	StateMachine();
 	void Init();
 	void Update();
+	~StateMachine() {}
 };
