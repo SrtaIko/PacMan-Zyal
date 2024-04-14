@@ -1,16 +1,17 @@
 #include "raylib.h"
 #include "GameStateMachine.hpp"
+#include <iostream>
 
-void main()
+int main()
 {
 #pragma region Variables
 	StateMachine game;
 #pragma endregion
-
-	SetTargetFPS(60);
+#pragma region Game Loop
 	game.Init();
-	while (game.CompareState(0) && !IsKeyPressed(KEY_ESCAPE))
+	while (WindowShouldClose() || game.GetNextState() != -1)
 	{
 		game.Update();
 	}
+	game.Close();
 }
