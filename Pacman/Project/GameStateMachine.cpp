@@ -180,7 +180,6 @@ bool StateMachine::IsSameState()
 	return false;
 }
 
-
 int StateMachine::GetState()
 {
 	return currentState;
