@@ -17,27 +17,21 @@ void StateMachine::Start()
 	{
 	case 0:					//Portrait Animation
 		std::cout << "Starting Portrait" << std::endl;
-		InitWindow(224, 288, "Portrait");
 		break;
 	case 1:					//Video Demostration
 		std::cout << "Starting Video Demostration" << std::endl;
-		InitWindow(224, 288, "Video Demostration");
 		break;
 	case 2:					//Inserting Coin
 		std::cout << "Starting Inserting Coin" << std::endl;
-		InitWindow(224, 288, "Insert Coin");
 		break;
 	case 3:					//Game
 		std::cout << "Starting Game" << std::endl;
-		InitWindow(224, 288, "Game");
 		break;
 	case 4:					//Level Clear Animation
 		std::cout << "Starting Level Clear Animation" << std::endl;
-		InitWindow(224, 288, "Level Clear");
 		break;
 	case 5:					//Game Over
 		std::cout << "Starting Game Over" << std::endl;
-		InitWindow(224, 288, "Game Over");
 		break;
 	}
 }
@@ -142,9 +136,6 @@ void StateMachine::End()
 	default:
 		break;
 	}
-	if(currentState >= 0 && currentState <= 5)
-		CloseWindow();
-
 	currentState = nextState;
 }
 #pragma endregion
@@ -152,6 +143,7 @@ void StateMachine::End()
 void StateMachine::Init()
 {
 	SetTargetFPS(60);
+	InitWindow(224, 288, "Pacman");
 }
 
 
@@ -176,13 +168,11 @@ void StateMachine::Close()
 
 }
 
-
 bool StateMachine::CompareState(const int state_)
 {
 	if (nextState == state_) return true;
 	return false;
 }
-
 
 bool StateMachine::IsSameState()
 {
